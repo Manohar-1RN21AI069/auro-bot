@@ -4,3 +4,4 @@ ctransformers
 langchain
 pydantic
 python-multipart
+streamlit
