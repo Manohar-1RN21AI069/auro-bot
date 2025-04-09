@@ -30,16 +30,16 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 print("✅ Model loaded!")
 
-# === Load Zephyr model ===
-print("🔄 Loading Zephyr GGUF model...")
-model = AutoModelForCausalLM.from_pretrained(
-    "./gguf_models/zephyr",
-    model_file="zephyr-7b-alpha.Q8_0.gguf",
-    model_type="mistral",
-    gpu_layers=0,  # 0 = CPU, tweak if using GPU
-    context_length=1024
-)
-print("✅ Zephyr GGUF loaded locally!")
+# # === Load Zephyr model ===
+# print("🔄 Loading Zephyr GGUF model...")
+# model = AutoModelForCausalLM.from_pretrained(
+#     "./gguf_models/zephyr",
+#     model_file="zephyr-7b-alpha.Q8_0.gguf",
+#     model_type="mistral",
+#     gpu_layers=0,  # 0 = CPU, tweak if using GPU
+#     context_length=1024
+# )
+# print("✅ Zephyr GGUF loaded locally!")
 
 # Health check
 @app.get("/")
