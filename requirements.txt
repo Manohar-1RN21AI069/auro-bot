@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+ctransformers
+langchain
+pydantic
+python-multipart
