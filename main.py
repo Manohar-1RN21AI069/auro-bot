@@ -13,7 +13,7 @@ app = FastAPI()
 # Allow CORS for frontend to access API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with specific origin in production
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,21 +25,10 @@ model = AutoModelForCausalLM.from_pretrained(
     "TheBloke/zephyr-7B-alpha-GGUF",
     model_file="zephyr-7b-alpha.Q4_K_M.gguf",
     model_type="mistral",
-    gpu_layers=0,  # Use 0 for CPU, or tune for GPU
+    gpu_layers=0,
     context_length=1024
 )
 print("✅ Model loaded!")
-
-# # === Load Zephyr model ===
-# print("🔄 Loading Zephyr GGUF model...")
-# model = AutoModelForCausalLM.from_pretrained(
-#     "./gguf_models/zephyr",
-#     model_file="zephyr-7b-alpha.Q8_0.gguf",
-#     model_type="mistral",
-#     gpu_layers=0,  # 0 = CPU, tweak if using GPU
-#     context_length=1024
-# )
-# print("✅ Zephyr GGUF loaded locally!")
 
 # Health check
 @app.get("/")
