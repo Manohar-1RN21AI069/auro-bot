@@ -49,6 +49,7 @@ async def root():
 # Chat endpoint
 @app.post("/chat")
 async def chat(req: MessageRequest):
+    print(f"📨 Received message: {req.message}")
     user_message = req.message.strip()
 
     prompt = f"""<|system|>You are AURA, an intelligent AI assistant.<|end|>
